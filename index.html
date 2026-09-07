@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jujutsu Kaisen F.C.G RP — AI Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <main class="app">
+    <header class="hero">
+      <div class="eyebrow">JUJUTSU KAISEN • F.C.G RP</div>
+      <h1>AI GENERATOR</h1>
+      <p>Создавай оригинальных персонажей для ролевой игры во вселенной «Магической битвы».</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-section="profileGenerator">Создать анкету</button>
+      <button class="tab" data-section="appearanceGenerator">Создать внешность</button>
+    </nav>
+
+    <section id="profileGenerator" class="panel">
+      <div class="panel-head">
+        <div>
+          <span class="label">01</span>
+          <h2>Генератор анкеты</h2>
+        </div>
+        <span class="status">AI</span>
+      </div>
+
+      <label for="rank">Желаемый ранг</label>
+      <select id="rank">
+        <option value="random">Случайный, но логичный</option>
+        <option value="4">4 ранг</option>
+        <option value="3">3 ранг</option>
+        <option value="2">2 ранг</option>
+        <option value="1">1 ранг</option>
+        <option value="special">Особый ранг</option>
+      </select>
+
+      <label for="characterWish">Пожелания</label>
+      <textarea id="characterWish" maxlength="2500"
+        placeholder="Например: 17 лет, спокойный характер, техника связана со стеклом, работает в Токийском колледже..."></textarea>
+
+      <button id="generateProfile" class="primary">Создать анкету</button>
+
+      <div id="profileLoading" class="loading hidden">Создаю персонажа…</div>
+
+      <article id="profileResult" class="result hidden">
+        <div class="result-head">
+          <h3>Готовая анкета</h3>
+          <button id="copyProfile" class="small">Копировать</button>
+        </div>
+        <pre id="profileText"></pre>
+      </article>
+    </section>
+
+    <section id="appearanceGenerator" class="panel hidden">
+      <div class="panel-head">
+        <div>
+          <span class="label">02</span>
+          <h2>Генератор внешности</h2>
+        </div>
+        <span class="status">IMAGE AI</span>
+      </div>
+
+      <label class="upload">
+        <input id="referenceImage" type="file" accept="image/png,image/jpeg,image/webp">
+        <span>Выбрать изображение-референс</span>
+        <small>AI сохранит ключевые черты референса и создаст персонажа для JJK.</small>
+      </label>
+
+      <img id="imagePreview" class="preview hidden" alt="Предпросмотр">
+
+      <label for="appearanceWish">Что изменить / добавить</label>
+      <textarea id="appearanceWish" maxlength="1500"
+        placeholder="Например: форма шамана, чёрное пальто, красные круглые очки, короткая стрижка..."></textarea>
+
+      <button id="generateAppearance" class="primary">Создать внешность</button>
+      <div id="appearanceLoading" class="loading hidden">Генерирую изображение…</div>
+
+      <div id="imageResult" class="image-result hidden">
+        <img id="generatedImage" alt="Сгенерированная внешность">
+        <a id="saveImage" class="small download" download="jjk-character.png">Сохранить изображение</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>JJK F.C.G RP</span>
+      <span>Original Character Generator</span>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
